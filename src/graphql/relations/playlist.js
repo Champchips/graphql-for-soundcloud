@@ -7,9 +7,9 @@ PlaylistTC.addRelation("owner", {
   projection: { createBy: 1 },
 });
 PlaylistTC.addRelation("music", {
-    resolver: () => MusicTC.getResolver("findMany"),
-    prepareArgs: {
-      filter: (source) => ({ _id: source.musicID }),
-    },
-    projection: { musicID: 1 },
-  });
+  resolver: () => MusicTC.getResolver("findMany"),
+  prepareArgs: {
+    filter: (source) => ({ _id: source.musicID }),
+  },
+  projection: { musicID: 1 },
+});

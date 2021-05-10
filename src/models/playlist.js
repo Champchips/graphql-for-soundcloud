@@ -11,11 +11,6 @@ const PlaylistSchema = new Schema({
     type: String,
     default: "",
   },
-  numberOfmusic: {
-    type: Number,
-    default: 0,
-    required: true,
-  },
   createDate: {
     type: Date,
     default: Date.now,
