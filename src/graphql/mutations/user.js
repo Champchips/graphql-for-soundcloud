@@ -16,15 +16,15 @@ const LoginPayload = schemaComposer.createObjectTC({
   export const login = schemaComposer.createResolver({
     name: 'login',
     args: {
-      username: 'String!',
+      email: 'String!',
       password: 'String!',
     },
     type: LoginPayload,
     resolve: async ({ args }) => {
-      const { username, password } = args
-      const user = await UserModel.findOne({ username })
+      const { email, password } = args
+      const user = await UserModel.findOne({ email })
       if (!user) {
-        throw new ValidationError(`Username ${username} not found`)
+        throw new ValidationError(`Email ${email} not found`)
       }
       const valid = await user.verifyPassword(password)
       if (!valid) {
