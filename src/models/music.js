@@ -30,12 +30,12 @@ const MusicSchema = new Schema({
   },
   img: {
     type: String,
-    index: true,
     default: "",
   },
   votes: {
     type: Number,
     default: 0,
+    index: true,
   },
 });
 
