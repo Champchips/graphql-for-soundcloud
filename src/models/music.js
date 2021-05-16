@@ -28,6 +28,15 @@ const MusicSchema = new Schema({
     require: true,
     index: true,
   },
+  img: {
+    type: String,
+    index: true,
+    default: "",
+  },
+  votes: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const MusicModel = mongoose.model("Music", MusicSchema);
